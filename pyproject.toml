@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpuset"
+version = "1.6.2"
+description = "Allows manipulation of cpusets and provides higher level functions."
+license = "GPL-2.0-only"
+authors = [
+    {name = "Alex Tsariounov", email = "tsariounov@gmail.com"},
+]
+maintainers = [
+    {name = "Michal Koutny", email = "mkoutny@suse.com"},
+]
+urls = {Homepage = "https://github.com/SUSE/cpuset"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Systems Administration",
+]
+requires-python = ">=3.6"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cpuset*"]
+
+[tool.setuptools.data-files]
+"share/doc/cpuset" = ["README", "AUTHORS", "NEWS", "doc/*.html", "doc/*.txt"]
