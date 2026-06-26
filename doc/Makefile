@@ -56,6 +56,7 @@ clean:
 
 %.1 %.7 : %.xml
 	xmlto -m callouts.xsl man $<
+	sed -i '/^\.it 1 an-trap$$/d' $@
 
 %.xml : %.txt
 	$(ASCIIDOC) -b docbook -d manpage -f asciidoc.conf $<
